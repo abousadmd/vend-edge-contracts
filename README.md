@@ -18,6 +18,7 @@ This library validates message shape and value ranges only. It does **not** auth
 - Timezone-qualified timestamp, identifier, numeric range, duplicate slot, and stock capacity checks
 - Zero runtime dependencies at runtime
 - Automated tests using Node's built-in test runner
+- Framework-neutral example showing how a server handler can validate messages
 
 ## Quick start
 
@@ -28,7 +29,7 @@ npm install
 npm test
 ```
 
-Build the package with `npm run build`. See [examples/validate-messages.mjs](examples/validate-messages.mjs) for example messages.
+Build the package with `npm run build`. See [examples/validate-messages.mjs](examples/validate-messages.mjs) for validator samples and [examples/request-adapter.mjs](examples/request-adapter.mjs) for a framework-neutral handler adapter.
 
 ## API overview
 
@@ -42,7 +43,7 @@ Each validator returns a discriminated result: `{ ok: true, value }` or `{ ok: f
 
 ## Security notes
 
-Validating a payload is not proof of sender identity. Integrating applications must authenticate devices, authorize operations server-side, protect network traffic with TLS, and implement replay protection and idempotency where needed. Device telemetry and timestamps remain untrusted input. See [SECURITY.md](SECURITY.md).
+The adapter example assumes that the surrounding HTTP handler has already authenticated and authorized the requester and parsed the request body with an appropriate size limit. Validating a payload is not proof of sender identity. Integrating applications must authenticate devices, authorize operations server-side, protect network traffic with TLS, and implement replay protection and idempotency where needed. Device telemetry and timestamps remain untrusted input. See [SECURITY.md](SECURITY.md).
 
 ## Development status
 
