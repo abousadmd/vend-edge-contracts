@@ -1,0 +1,37 @@
+{
+  "name": "vend-edge-contracts",
+  "version": "0.1.0",
+  "description": "Small, dependency-free TypeScript contracts and validators for connected vending and edge-device messages.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abousadmd/vend-edge-contracts.git"
+  },
+  "homepage": "https://github.com/abousadmd/vend-edge-contracts#readme",
+  "bugs": {
+    "url": "https://github.com/abousadmd/vend-edge-contracts/issues"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "node -e \"import('node:fs').then(fs => fs.rmSync('dist', { recursive: true, force: true }))\"",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test",
+    "check": "npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
