@@ -13,7 +13,11 @@
   "bugs": {
     "url": "https://github.com/abousadmd/vend-edge-contracts/issues"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -26,7 +30,9 @@
     "clean": "node -e \"import('node:fs').then(fs => fs.rmSync('dist', { recursive: true, force: true }))\"",
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && node --test",
-    "check": "npm test"
+    "check": "npm test",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
