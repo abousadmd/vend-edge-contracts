@@ -47,7 +47,7 @@ The adapter example assumes that the surrounding HTTP handler has already authen
 
 ## Development status
 
-The package version is currently `0.1.0` and should be treated as early-stage software. Before a stable `1.0.0` release, maintainers should gather interoperability feedback, validate ranges against real hardware classes, and establish a compatibility policy. Do not represent this as a widely adopted project without evidence.
+The package version is currently `0.1.0` and should be treated as early-stage software. CI runs tests on Node.js 20 and 22 and checks that the package can be packed. Before a stable `1.0.0` release, maintainers should gather interoperability feedback, validate ranges against real hardware classes, and establish a compatibility policy. Do not represent this as a widely adopted project without evidence.
 
 ## Contributing
 
